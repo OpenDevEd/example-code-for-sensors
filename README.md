@@ -2,8 +2,6 @@
 
 This README provides the pin assignments for connecting the Raspberry Pi Pico with the AHT20 sensor, BH1750 sensor, and Pi Inky display.
 
-## Pinout
-
 ### Raspberry Pi Pico
 
 - **PIN_PICO_SCL**: I2C SCL pin (board.GP3)
