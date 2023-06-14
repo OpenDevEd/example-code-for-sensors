@@ -43,12 +43,41 @@ display = adafruit_uc8151d.UC8151D(
 # Make a group to write to.
 g = displayio.Group()
 
-text = "Hello World"
-text_area = label.Label(terminalio.FONT,text=text)
-text_area.x = 10
-text_area.y = 10
-display.show(text_area)
- 
-display.refresh()
+
+#lines 0 10, 20, 30 ... to 290
+#22 caracters per line
+#columns 0 10, 20, 30 ... for tab
+
+def displayText(content, line, column):
+    text = content
+    text_area = label.Label(terminalio.FONT, text=text)
+    text_area.x = line
+    text_area.y = column
+    return text_area
+  
+def displayData(light_value,temperature_value,humidity_value):
+    g.append(displayText("Sensors Data", 10, 10))
+    g.append(displayText("Light: "  + str(light_value) + " Lux" , 10, 20))
+    g.append(displayText("Temperature: " + str(temperature_value) + " C", 10, 30))
+    g.append(displayText("Humidity: " + str(humidity_value) + " H", 10, 40))
+    display.show(g)
+    display.refresh()
+
+def updateData(light_value,temperature_value,humidity_value):
+    time.sleep(180)  # Adjust the delay as needed, but no les tha 180
+    for loop in range (len(g)):
+        g.pop()
+    g.append(displayText("Sensors Data", 10, 10))
+    g.append(displayText("Light: "  + str(light_value) + " Lux" , 10, 20))
+    g.append(displayText("Temperature: " + str(temperature_value) + " C", 10, 30))
+    g.append(displayText("Humidity: " + str(humidity_value) + " H", 10, 40))
+    display.refresh() 
+
+displayData(10,30,0.8)
+
 while True:
-    pass
+    updateData(11,29,0.7)
+    
+       
+    
+    
