@@ -3,9 +3,11 @@
 # SPDX-License-Identifier: Unlicense
 import time
 import board
+import busio
 import adafruit_bh1750
 
-i2c = board.I2C()  # uses board.SCL and board.SDA
+#i2c = board.I2C()  # uses board.SCL and board.SDA
+i2c = busio.I2C(board.GP3, board.GP2)
 # i2c = board.STEMMA_I2C()  # For using the built-in STEMMA QT connector on a microcontroller
 
 sensor = adafruit_bh1750.BH1750(i2c)

@@ -76,7 +76,7 @@ def updateData(light_value,temperature_value,humidity_value):
 displayData(10,30,0.8)
 
 while True:
-    updateData(11,29,0.7)
+    updateData(18,29,0.7)
     
        
     
