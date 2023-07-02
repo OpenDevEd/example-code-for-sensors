@@ -25,7 +25,7 @@ def normalized_rms(values):
 
 
 # Main program
-mic = audiobusio.PDMIn(board.GP13, board.GP1, sample_rate=16000, bit_depth=16)
+mic = audiobusio.PDMIn(board.GP5, board.GP1, sample_rate=16000, bit_depth=16)
 samples = array.array('H', [0] * 160)
 
 
