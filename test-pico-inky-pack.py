@@ -11,7 +11,7 @@ import board
 import displayio
 import terminalio
 from adafruit_display_text import label
-import adafruit_uc8151d
+
 
 displayio.release_displays()
 
