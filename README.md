@@ -26,3 +26,17 @@ This README provides the pin assignments for connecting the Raspberry Pi Pico wi
 | Inky SWC            | GP14 | GP17 | Inky CS
 | Lora-EN             | GP15 | GP16 | MISO0 (Inky, SD-Card)
 
+# Raspberry Pi Zero W Pin Assignments
+
+This TABLE provides the pin assignments for connecting the Raspberry Pi Zero W with the Lora RfM9x.
+
+
+|                     | Pin  | Pin  |     Radio                    |
+|---------------------|------|------|-------------------------|
+| Board 3v3           | Pin 1  | VIN | VIN
+| Board GND           | Pin 6  | GND |GND
+| Board SCK           | Pin 23 | SPI Clock  | SCK
+| Board MOSI          | Pin 19 | SPI MOSI   | MOSI
+| Board MISO          | Pin 21 | SPI MISO  | MISO
+| Board D5            | Pin 29 | GPIO 21 | CS
+| Board D6            | Pin 31  | GPIO 22  | RST
